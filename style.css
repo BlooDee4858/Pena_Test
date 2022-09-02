@@ -1,0 +1,57 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    margin: 30px;
+    font-family: Arial, sans-serif;
+
+}
+input, textarea {
+    margin: 5px;
+    width: 300px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.page{
+    display: flex;
+    flex-direction: row;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.pagination {
+    display: inline-block;
+}
+li {
+    list-style-type: none;
+    /* Убираем маркеры */
+}
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.flexx{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
