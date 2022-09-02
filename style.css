@@ -9,12 +9,16 @@ body{
 
 }
 input, textarea {
-    margin: 5px;
+    margin: 10px;
     width: 300px;
 }
 form {
+    padding: 10px;
     display: flex;
     flex-direction: column;
+}
+.forma{
+    margin: 5px;
 }
 
 table {
@@ -37,21 +41,8 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.pagination {
-    display: inline-block;
-}
-li {
-    list-style-type: none;
-    /* Убираем маркеры */
-}
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-.flexx{
-    width: 200px;
-    display: flex;
+.pagination
+{
+    width: 10%;
     justify-content: space-between;
 }
