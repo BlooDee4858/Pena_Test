@@ -1,10 +1,17 @@
 <?php
 include 'comment.php';
 
-
 require_once 'Paginator.php';
 
 $conn = new mysqli('localhost', 'root', '', 'book');
+
+$columns = array('name','date','email');
+
+// Only get the column if it exists in the above columns array, if it doesn't exist the database table will be sorted by the first item in the columns array.
+$column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
+
+// Get the sort order for the column, ascending or descending, default is ascending.
+$sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
 $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 5;
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
@@ -13,7 +20,14 @@ $query = "Select * from book.records";
 
 $Paginator = new Paginator($conn, $query);
 
-$results = $Paginator->getData( $limit, $page);
+$results = $Paginator->getData($limit, $page, $column, $sort_order);
+
+if($results)
+{
+    $up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order);
+    $asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
+    $add_class = ' class="highlight"';
+}
 
 ?>
 
@@ -28,6 +42,7 @@ $results = $Paginator->getData( $limit, $page);
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     <link rel="stylesheet" href = "style/style.css">
     <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
     <form action="" method="post">
@@ -56,9 +71,9 @@ $results = $Paginator->getData( $limit, $page);
             <table>
                 <thead>
                 <tr>
-                    <th>Дата</th>
-                    <th>Имя</th>
-                    <th>Почта</th>
+                    <th><a href="index.php?column=name&order=<?php echo $asc_or_desc; ?>">Дата<i class="fas fa-sort<?php echo $column == 'date' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                    <th><a href="index.php?column=age&order=<?php echo $asc_or_desc; ?>">Имя<i class="fas fa-sort<?php echo $column == 'name' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                    <th><a href="index.php?column=joined&order=<?php echo $asc_or_desc; ?>">Почта<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                     <th>Домашняя страница</th>
                     <th>Сообщение</th>
                 </tr>

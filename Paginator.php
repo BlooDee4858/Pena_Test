@@ -20,7 +20,7 @@ class Paginator
     }
 
 
-    public function getData($limit, $page)
+    public function getData($limit, $page, $column, $sort_order)
     {
         $this->_limit = $limit;
         $this->_page = $page;
@@ -28,7 +28,7 @@ class Paginator
         if ($this->_limit == 'all') {
             $query = $this->_query;
         } else {
-            $query = $this->_query . " LIMIT " . ( ( $this->_page - 1 ) * $this->_limit ). ", $this->_limit";
+            $query = $this->_query . " ORDER BY " . $column . " " . $sort_order . " LIMIT " . ( ( $this->_page - 1 ) * $this->_limit ). ", $this->_limit";
         }
         $rs = $this->_conn->query($query);
 
