@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Records` (
-  `id` int NOT NULL,
+  `id` int NOT NULL primary key identity(1, 1),
   `Name` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Homepage` varchar(100) DEFAULT NULL,
   `Text` varchar(300) NOT NULL,
-  `Date` varchar(30) NOT NULL,
+  `Date` datetime NOT NULL,
   `IP` varchar(20) NOT NULL,
   `Browser` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
@@ -42,41 +42,33 @@ CREATE TABLE `Records` (
 -- Дамп данных таблицы `Records`
 --
 
-INSERT INTO `Records` (`id`, `Name`, `Email`, `Homepage`, `Text`, `Date`, `IP`, `Browser`) VALUES
-(21, 'awdawd', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awdawdawd', '2022-09-02 02:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(22, 'WDAd', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awdawdawd', '2022-09-02 02:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(23, 'Артем', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'adadwdawd', '2022-09-02 04:29', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(24, 'Олег', 'griminov@gmail.com', '', 'фцвфцв', '2022-09-02 04:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(25, 'Олег', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'wdwd', '2022-09-02 07:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(26, 'Олег', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awdawd', '2022-09-02 07:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(27, 'Артем', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'wadawd', '2022-09-02 07:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(28, 'Олег', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awd', '2022-09-02 08:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(29, 'Артем', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awdawd', '2022-09-02 08:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(30, 'Алёша', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awdawd', '2022-09-02 09:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(31, 'Акакий', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'fsefesf', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
-(32, 'Иван', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36');
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `Records`
---
-ALTER TABLE `Records`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `Records`
---
-ALTER TABLE `Records`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `Records` (`Name`, `Email`, `Homepage`, `Text`, `Date`, `IP`, `Browser`) VALUES
+('Биба', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'awdawdawd', '2022-09-02 02:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Боба', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'awdawdawd', '2022-09-02 02:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Артем', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'adadwdawd', '2022-09-02 04:29', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Олег', 'email@yandex.ru', '', 'фцвфцв', '2022-09-02 04:31', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Олег', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'wdwd', '2022-09-02 07:08', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Олег', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'awdawd', '2022-09-02 07:11', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Артем', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'wadawd', '2022-09-02 07:12', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Олег', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'awd', '2022-09-02 08:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Артем', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'awdawd', '2022-09-02 08:55', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Алёша', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'awdawd', '2022-09-02 09:26', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Акакий', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'fsefesf', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Иван', 'email@yandex.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Андрей', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Михаил', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Илья', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Даня', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Аня', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Катя', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Вова', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Настя', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Поля', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Ольга', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Костя', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Тёма', 'pochta@mail.ru', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Саша', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Александр', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Ваня', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Якоб', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36'),
+('Иван', 'griminov@gmail.com', 'https://github.com/BlooDee4858?tab=repositories', 'цфвфцв', '2022-09-02 09:27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36');

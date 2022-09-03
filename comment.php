@@ -15,7 +15,7 @@ if (count($_POST) > 0) {
     $name = trim($_POST['Name']);
     $email = trim($_POST['Email']);
     $comment = trim($_POST["Comment"]);
-    $date = date('Y-m-d h:i');
+    $date = date('Y-m-d h:i:s');
     $ip = $_SERVER['REMOTE_ADDR'];
     $browser = $_SERVER['HTTP_USER_AGENT'];
     $homepage = trim($_POST['Homepage']);

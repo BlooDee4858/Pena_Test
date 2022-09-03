@@ -13,7 +13,7 @@ $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET[
 // Get the sort order for the column, ascending or descending, default is ascending.
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
-$limit = (isset($_GET['limit'])) ? $_GET['limit'] : 5;
+$limit = (isset($_GET['limit'])) ? $_GET['limit'] : 25;
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 $links = (isset($_GET['links'])) ? $_GET['links'] : 3;
 $query = "Select * from book.records";
@@ -71,9 +71,9 @@ if($results)
             <table>
                 <thead>
                 <tr>
-                    <th><a href="index.php?column=name&order=<?php echo $asc_or_desc; ?>">Дата<i class="fas fa-sort<?php echo $column == 'date' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                    <th><a href="index.php?column=age&order=<?php echo $asc_or_desc; ?>">Имя<i class="fas fa-sort<?php echo $column == 'name' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-                    <th><a href="index.php?column=joined&order=<?php echo $asc_or_desc; ?>">Почта<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                    <th><a href="index.php?column=date&order=<?php echo $asc_or_desc; ?>">Дата<i class="fas fa-sort<?php echo $column == 'date' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                    <th><a href="index.php?column=name&order=<?php echo $asc_or_desc; ?>">Имя<i class="fas fa-sort<?php echo $column == 'name' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+                    <th><a href="index.php?column=email&order=<?php echo $asc_or_desc; ?>">Почта<i class="fas fa-sort<?php echo $column == 'email' ? '-' . $up_or_down : ''; ?>"></i></a></th>
                     <th>Домашняя страница</th>
                     <th>Сообщение</th>
                 </tr>
